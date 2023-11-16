@@ -21,10 +21,13 @@ from logparser.AEL import LogParser
 from logparser.utils import evaluator
 import os
 import pandas as pd
+from evaluator import evaluate
 
 
-input_dir = "../../data/loghub_2k/"  # The input directory of log file
+
+#input_dir = "../../data/loghub_2k/"  # The input directory of log file
 output_dir = "AEL_result/"  # The output directory of parsing results
+input_dir = "../../../../log-analytics-chatgpt-master/dataset"  # The input directory of log file
 
 
 benchmark_settings = {
@@ -173,6 +176,9 @@ for dataset, setting in benchmark_settings.items():
         parsedresult=os.path.join(output_dir, log_file + "_structured.csv"),
     )
     bechmark_result.append([dataset, F1_measure, accuracy])
+
+    evaluate(os.path.join(indir, log_file + "_structured_corrected.csv"),
+             os.path.join(output_dir, log_file + "_structured.csv"))
 
 print("\n=== Overall evaluation results ===")
 df_result = pd.DataFrame(bechmark_result, columns=["Dataset", "F1_measure", "Accuracy"])
