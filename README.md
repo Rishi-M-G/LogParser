@@ -1,2 +1,2 @@
-# LogParser
-This repository is a part of COEN691 - Artificial Intelligence for Software Systems Operations course instructed by Professor Wahab Hamou-Lhadj, PhD. by 
+# The Effectiveness of ChatGPT in Log Parsing?
+In our study, we used ChatGPT in the zero-shot scenario to measure how effectively it can parse logs. Also, we compared ChatGPT with Drain, and ULP in terms of the baselines GA, MLA, and ED. This repository mainly focuses on the steps used to run Drain and ULP. We have also added a brief overview of the results from our study.
